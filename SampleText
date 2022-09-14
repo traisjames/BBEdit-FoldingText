@@ -1,0 +1,17 @@
+This is a test document for a Folding Text Language Module
+
+This is text //This is an inline comment
+
+#This is a start of a block
+based region and endregion pragma used in Visual Studio
+#
+
+<!--This is the start of a block
+This is based on comments in HTML
+-->
+
+/* This is the start of a block
+This is based on comments in many languages.
+*/
+
+This is text at the end.  I know, so orgional.
