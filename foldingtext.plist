@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BBLMCanSpellCheckCodeRuns</key>
+	<true/>
+	<key>BBLMCommentPrefixDefault</key>
+	<string>#</string>
+	<key>BBLMCommentSuffixDefault</key>
+	<string>#</string>
+	<key>BBLMCommentLineDefault</key>
+	<string>//</string>
+	<key>BBEditDocumentType</key>
+	<string>CodelessLanguageModule</string>
+	<key>BBLMColorsSyntax</key>
+	<false/>
+	<key>BBLMIsCaseSensitive</key>
+	<false/>
+	<key>BBLMKeywordList</key>
+	<array/>
+	<key>BBLMLanguageCode</key>
+	<string>txtF</string>
+	<key>BBLMLanguageDisplayName</key>
+	<string>Folding Text</string>
+	<key>BBLMScansFunctions</key>
+	<false/>
+	<key>BBLMSuffixMap</key>
+	<array>
+		<dict>
+			<key>BBLMLanguageSuffix</key>
+			<string>.txt</string>
+		</dict>
+	</array>
+	<key>Language Features</key>
+	<dict>
+		<key>Comment Pattern</key>
+		<string>(?x:
+    (//.*$)        |    (?# Line comment using //)
+    (?s:/\*.*?\*/) |    (?# Block comment using /* */)
+    (?s:^#.*?#$) |    (?# Block comment using #... #)
+    (?s:^&lt;!--.*?--&gt;$)    (?# Block comment using &lt;-- --&gt;)
+)</string>
+	</dict>
+</dict>
+</plist>
