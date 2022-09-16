@@ -2,28 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BBLMKeywordList</key>
+	<array>
+		<string>GOTO</string>
+		<string>IF</string>
+		<string>THEN</string>
+		<string>ELSE</string>
+		<string>END</string>
+	</array>
 	<key>BBLMCanSpellCheckCodeRuns</key>
 	<true/>
 	<key>BBLMCommentPrefixDefault</key>
-	<string>#</string>
+	<string>&lt;!--</string>
 	<key>BBLMCommentSuffixDefault</key>
-	<string>#</string>
+	<string>--&gt;</string>
 	<key>BBLMCommentLineDefault</key>
 	<string>//</string>
 	<key>BBEditDocumentType</key>
 	<string>CodelessLanguageModule</string>
 	<key>BBLMColorsSyntax</key>
-	<false/>
+	<true/>
 	<key>BBLMIsCaseSensitive</key>
-	<false/>
-	<key>BBLMKeywordList</key>
-	<array/>
+	<true/>
 	<key>BBLMLanguageCode</key>
 	<string>txtF</string>
 	<key>BBLMLanguageDisplayName</key>
 	<string>Folding Text</string>
 	<key>BBLMScansFunctions</key>
-	<false/>
+	<true/>
 	<key>BBLMSuffixMap</key>
 	<array>
 		<dict>
@@ -31,15 +37,33 @@
 			<string>.txt</string>
 		</dict>
 	</array>
+	<key>BBLMFunctionScannerDoesFoldsToo</key>
+	<true/>
 	<key>Language Features</key>
 	<dict>
 		<key>Comment Pattern</key>
 		<string>(?x:
     (//.*$)        |    (?# Line comment using //)
     (?s:/\*.*?\*/) |    (?# Block comment using /* */)
-    (?s:^#.*?#$) |    (?# Block comment using #... #)
-    (?s:^&lt;!--.*?--&gt;$)    (?# Block comment using &lt;-- --&gt;)
+    (?s:^\#.*?\#$) |    (?# Block comment using #... #)
+    (?s:^&lt;!--.*?--&gt;$)    (?# Block comment using &amp;lt;-- --&amp;gt;)
 )</string>
+		<key>Identifier and Keyword Character Class</key>
+		<string>\p{Xwd}</string>
+		<key>Function Pattern</key>
+		<string>(?x)(?s)(?i)
+    (?P&lt;function&gt;
+        (?P&lt;function_name&gt;
+            \/\*.*?\*\/                 (?# Block comment using /* */)
+        |    
+            ^\#.*?\#$                   (?# Block comment using #...#)
+        |
+            ^&lt;!--.*?--&gt;$                (?# Block comment using &lt;!-- --&gt;)
+        |
+            ^IF\s.+?
+            ^END$
+        )
+    )</string>
 	</dict>
 </dict>
 </plist>
